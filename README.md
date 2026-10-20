@@ -1,4 +1,4 @@
-# Srajan Agarwal — personal research website
+# Srajan Agarwal - personal research website
 
 A build-free portfolio with a large graph brain and an interactive network
 background. The biography is part of the opening. Research comes next, followed
