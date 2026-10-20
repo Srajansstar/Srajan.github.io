@@ -1,0 +1,14 @@
+VISUAL CREDITS
+
+The graph-brain geometry is adapted from BrainMesh_ICBM152.lh.mz3,
+distributed with NiiVue (copyright 2021, Niivue; BSD 2-Clause).
+Source: https://github.com/niivue/niivue/blob/main/packages/niivue/demos/images/BrainMesh_ICBM152.lh.mz3
+Licence: NIIVUE-LICENSE.txt, included in this folder.
+
+Modifications: vertices were spatially clustered, the left hemisphere was
+mirrored to make an illustrative pair, and local surface edges were retained.
+This is a conceptual rendering: colours, community groupings, interhemispheric
+arcs, and signal pulses are illustrative and do not represent measured
+connectivity or experimental data. It is not a validated anatomical viewer.
+
+Other research graphics and the page design are original code-native visuals.
