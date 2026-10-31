@@ -124,16 +124,16 @@ setupCopy('#copy-gmail', 'srajansstar@gmail.com', 'Copy Gmail');
 
 $('#year').textContent = new Date().getFullYear();
 
-// Render Srajan's original artwork (blurred by default, tap to reveal, no names)
+// Render Srajan's original artwork (statically rendered in HTML, fallback dynamic)
 const sketches = window.SKETCHES || [];
 const sketchGallery = $('#sketch-gallery');
-if (sketchGallery) {
+if (sketchGallery && sketchGallery.children.length === 0) {
   sketchGallery.innerHTML = sketches.map((s, i) => {
     const isLandscape = s.orientation === 'landscape';
     return `
       <div class="sketch-mini-card ${isLandscape ? 'landscape' : 'portrait'}" data-index="${i}">
-        <div class="sketch-thumb-wrap ${isLandscape ? 'landscape' : 'portrait'}" data-sketch-index="${i}" role="button" tabindex="0" aria-label="Tap to reveal sketch">
-          <img src="${escapeHTML(s.image)}" alt="Hand-drawn study" loading="lazy">
+        <div class="sketch-thumb-wrap ${isLandscape ? 'landscape' : 'portrait'}" data-sketch-index="${i}" role="button" tabindex="0" aria-label="Hand-drawn study ${i+1}" onclick="handleSketchClick(this, ${i})">
+          <img src="${escapeHTML(s.image)}" alt="Hand-drawn study ${i+1}" loading="lazy">
           <div class="sketch-tap-prompt">
             <span class="sketch-tap-pill">Tap to reveal</span>
           </div>
@@ -143,36 +143,36 @@ if (sketchGallery) {
   }).join('');
 }
 
-// Sample sketches toggle (minimal, no disclaimers)
-const toggleSketchesBtn = $('#toggle-sketches');
-const hideSketchesBtn = $('#hide-sketches');
-const sketchGalleryWrap = $('#sketch-gallery-wrap');
+// Sample sketches toggle (bulletproof, works directly & inline)
+window.setSketchesVisible = function(show) {
+  const wrap = $('#sketch-gallery-wrap');
+  const btn = $('#toggle-sketches');
+  if (!wrap) return;
 
-if (toggleSketchesBtn && sketchGalleryWrap) {
-  const setSketchesVisible = (show) => {
-    if (show) {
-      sketchGalleryWrap.removeAttribute('hidden');
-      toggleSketchesBtn.textContent = 'Hide sample sketches ↑';
-      toggleSketchesBtn.setAttribute('aria-expanded', 'true');
-    } else {
-      sketchGalleryWrap.setAttribute('hidden', '');
-      toggleSketchesBtn.textContent = 'View sample sketches ↓';
-      toggleSketchesBtn.setAttribute('aria-expanded', 'false');
-    }
-  };
-
-  toggleSketchesBtn.addEventListener('click', () => {
-    const isHidden = sketchGalleryWrap.hasAttribute('hidden');
-    setSketchesVisible(isHidden);
-  });
-
-  if (hideSketchesBtn) {
-    hideSketchesBtn.addEventListener('click', () => {
-      setSketchesVisible(false);
-      toggleSketchesBtn.focus();
-    });
+  if (typeof show !== 'boolean') {
+    const isHidden = wrap.hasAttribute('hidden') || wrap.hidden || wrap.style.display === 'none' || (window.getComputedStyle && getComputedStyle(wrap).display === 'none');
+    show = isHidden;
   }
-}
+
+  if (show) {
+    wrap.removeAttribute('hidden');
+    wrap.hidden = false;
+    wrap.style.setProperty('display', 'flex', 'important');
+    if (btn) {
+      btn.textContent = 'Hide sample sketches ↑';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  } else {
+    wrap.setAttribute('hidden', '');
+    wrap.hidden = true;
+    wrap.style.setProperty('display', 'none', 'important');
+    if (btn) {
+      btn.textContent = 'View sample sketches ↓';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  }
+};
+window.toggleSketchGallery = window.setSketchesVisible;
 
 const sketchDialog = $('#sketch-dialog');
 if (sketchDialog) {
@@ -192,20 +192,7 @@ if (sketchDialog) {
     sketchDialog.showModal();
     document.body.style.overflow = 'hidden';
   };
-
-  document.addEventListener('click', e => {
-    const thumb = e.target.closest('.sketch-thumb-wrap');
-    if (!thumb) return;
-    e.preventDefault();
-    const index = Number(thumb.dataset.sketchIndex);
-    if (!thumb.classList.contains('revealed')) {
-      // First tap reveals (unblurs) the sketch
-      thumb.classList.add('revealed');
-    } else {
-      // Second tap opens the full high-res modal
-      openSketch(index);
-    }
-  });
+  window.openSketchModal = openSketch;
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -213,10 +200,8 @@ if (sketchDialog) {
       if (thumb) {
         e.preventDefault();
         const index = Number(thumb.dataset.sketchIndex);
-        if (!thumb.classList.contains('revealed')) {
-          thumb.classList.add('revealed');
-        } else {
-          openSketch(index);
+        if (typeof window.handleSketchClick === 'function') {
+          window.handleSketchClick(e, thumb, index);
         }
       }
     }

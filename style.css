@@ -55,6 +55,7 @@
 /* Revealed Gallery Container */
 .sketch-gallery-wrap{display:flex;flex-direction:column;margin-top:16px;animation:sketchFadeIn .28s ease forwards}
 .sketch-gallery-wrap[hidden]{display:none!important}
+.sketch-gallery-wrap:not([hidden]){display:flex!important}
 @keyframes sketchFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .sketches-footer-actions{display:flex;align-items:center;justify-content:flex-end;margin-top:12px;padding-top:8px}
 .btn-hide-sketches{background:transparent;border:0;color:#586d5c;font-size:11px;padding:4px 6px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;transition:color .2s ease}
