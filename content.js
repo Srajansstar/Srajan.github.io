@@ -137,7 +137,7 @@ window.PROJECTS = [
 // Srajan's original hand-drawn artwork
 window.SKETCHES = [
   {
-    "image": "assets/sketch-01.jpg",
+    "image": "assets/sketch-01.jpg?v=2",
     "orientation": "portrait"
   },
   {
