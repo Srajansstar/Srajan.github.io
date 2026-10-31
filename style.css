@@ -45,7 +45,20 @@
 
 .sketches-block{display:flex;flex-direction:column}
 .sketches-header h3{font-size:18px;margin-bottom:4px;color:#18241d}
-.sketches-header p{font-size:13px;color:var(--muted);margin-bottom:18px}
+.sketches-header p{font-size:13px;color:var(--muted);margin-bottom:12px}
+
+/* Minimalist Sample Sketches Toggle Button */
+.btn-toggle-sketches{display:inline-flex;align-items:center;gap:6px;background:#edf2ea;color:#283a2d;font-size:11.5px;font-weight:600;padding:7px 14px;border-radius:4px;border:1px solid #c7d5c3;transition:all .2s ease;cursor:pointer;width:fit-content}
+.btn-toggle-sketches:hover{background:#dfeae0;color:#19271e;border-color:#a2bba0;transform:translateY(-1px)}
+.btn-toggle-sketches:focus-visible{outline:2px solid #93b29b;outline-offset:3px}
+
+/* Revealed Gallery Container */
+.sketch-gallery-wrap{display:flex;flex-direction:column;margin-top:16px;animation:sketchFadeIn .28s ease forwards}
+.sketch-gallery-wrap[hidden]{display:none!important}
+@keyframes sketchFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.sketches-footer-actions{display:flex;align-items:center;justify-content:flex-end;margin-top:12px;padding-top:8px}
+.btn-hide-sketches{background:transparent;border:0;color:#586d5c;font-size:11px;padding:4px 6px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;transition:color .2s ease}
+.btn-hide-sketches:hover{color:#1f3323}
 
 /* Blurred Sketches (Tap to reveal, no names) */
 .sketch-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:end}

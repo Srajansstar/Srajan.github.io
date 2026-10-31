@@ -143,6 +143,37 @@ if (sketchGallery) {
   }).join('');
 }
 
+// Sample sketches toggle (minimal, no disclaimers)
+const toggleSketchesBtn = $('#toggle-sketches');
+const hideSketchesBtn = $('#hide-sketches');
+const sketchGalleryWrap = $('#sketch-gallery-wrap');
+
+if (toggleSketchesBtn && sketchGalleryWrap) {
+  const setSketchesVisible = (show) => {
+    if (show) {
+      sketchGalleryWrap.removeAttribute('hidden');
+      toggleSketchesBtn.textContent = 'Hide sample sketches ↑';
+      toggleSketchesBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      sketchGalleryWrap.setAttribute('hidden', '');
+      toggleSketchesBtn.textContent = 'View sample sketches ↓';
+      toggleSketchesBtn.setAttribute('aria-expanded', 'false');
+    }
+  };
+
+  toggleSketchesBtn.addEventListener('click', () => {
+    const isHidden = sketchGalleryWrap.hasAttribute('hidden');
+    setSketchesVisible(isHidden);
+  });
+
+  if (hideSketchesBtn) {
+    hideSketchesBtn.addEventListener('click', () => {
+      setSketchesVisible(false);
+      toggleSketchesBtn.focus();
+    });
+  }
+}
+
 const sketchDialog = $('#sketch-dialog');
 if (sketchDialog) {
   const openSketch = (index) => {

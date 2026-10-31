@@ -1,0 +1,92 @@
+# Srajan Agarwal | Graphs, brains & learning
+
+[Skip to content](http://127.0.0.1:8080/index.html#main)
+[Srajan Agarwal](http://127.0.0.1:8080/index.html#home)
+[About](http://127.0.0.1:8080/index.html#home)
+[Research](http://127.0.0.1:8080/index.html#research)
+[Education](http://127.0.0.1:8080/index.html#education)
+[Beyond research](http://127.0.0.1:8080/index.html#personal)
+[Contact](http://127.0.0.1:8080/index.html#contact)
+[CV ↗](http://127.0.0.1:8080/assets/Srajan-Agarwal-CV.pdf)
+GRAPH LEARNING & COMPUTATIONAL NEUROSCIENCE
+
+# Srajan Agarwal
+I’m a Data Science student at IISER Thiruvananthapuram, exploring how graph learning and geometric deep learning can help us decode the brain.
+My research centers on scalable graph representation learning and computational neuroscience—focusing on compact graph representations, graph condensation, and cortical network modeling from source-localised neural dynamics.
+PhD opportunities · September 2027 onward
+[Explore my research ↗](http://127.0.0.1:8080/index.html#research)
+RESEARCH
+
+## What I’m working on.
+Graph learning, neural data, and computational imaging.
+EDUCATION
+
+## Where I’ve studied.
+
+### Integrated BS–MS in Data Science
+
+#### IISER Thiruvananthapuram
+Thiruvananthapuram, Kerala
+Expected graduation: August 2027
+
+### Higher secondary
+
+#### Kiddy’s Corner School
+Gwalior, Madhya Pradesh
+
+### High school
+
+#### St. Paul’s School
+Morar, Gwalior, Madhya Pradesh
+PUBLICATIONS
+
+## Papers & preprints.
+
+### [Extremely Fast and Compact Binary Graph Representations via Randomized Operator Sketching](https://arxiv.org/abs/2609.32641)
+[Extremely Fast and Compact Binary Graph Representations via Randomized Operator Sketching](https://arxiv.org/abs/2609.32641)
+Srajan Agarwal, Megha P, Bikas C Das, Zakaria Laskar, Saptarshi Bej
+[↗](https://arxiv.org/abs/2609.32641)
+
+### [HyperFuse: Fast Self-Supervised Node Embeddings for Attributed Hypergraphs](https://arxiv.org/abs/2610.03211)
+[HyperFuse: Fast Self-Supervised Node Embeddings for Attributed Hypergraphs](https://arxiv.org/abs/2610.03211)
+Megha P, Harshit Kumar, Srajan Agarwal, Anirban Banerjee, Olaf Wolkenhauer, Saptarshi Bej
+[↗](https://arxiv.org/abs/2610.03211)
+EXPERIENCE
+
+## Research experience.
+PyTorch · PyG · MNE-PythonNumPy · SciPy · NetworkXNeuropixels / IBL · Git · Linux
+
+### Master’s Researcher
+IDEA Lab · IISER Thiruvananthapuram
+
+### Remote NeuroAI Researcher
+Cajal Institute · CSIC, Madrid
+
+### Undergraduate Researcher
+Medical Imaging Lab · IISER Thiruvananthapuram
+
+### Machine Learning Researcher
+India AI Project
+BEYOND RESEARCH
+
+## Away from the screen.
+I enjoy acoustic guitar, sketching, and reading.
+
+### Acoustic guitar
+A little music outside the lab.
+
+### Books & quieter moments
+Time for a good book and a change of pace.
+SKETCHBOOK
+
+## A few things I’ve drawn.
+I’ll be adding some of my sketches here soon.
+CONTACT
+
+## Get in touch.
+For research conversations, collaborations, or PhD opportunities.
+[srajan22@iisertvm.ac.in ↗](mailto:srajan22@iisertvm.ac.in)
+[GitHub ↗](https://github.com/Srajansstar)
+[Curriculum vitae ↗](http://127.0.0.1:8080/assets/Srajan-Agarwal-CV.pdf)
+[Visual credits ↗](http://127.0.0.1:8080/assets/credits.txt)
+[Back to top ↑](http://127.0.0.1:8080/index.html#home)
